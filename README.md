@@ -5,17 +5,42 @@ React native image pin allows for adding a pin or a marker to any image and to z
 ## Installation
 
 ```sh
-npm install react-native-image-pin
+npm install react-native-image-pin @openspacelabs/react-native-zoomable-view
+yarn add react-native-image-pin @openspacelabs/react-native-zoomable-view
 ```
 
 ## Usage
 
-```js
-import { multiply } from "react-native-image-pin";
+```javascript
+import ImagePinView from "react-native-image-pin";
 
-// ...
+<ImagePinView
+    editable={true}
+    containerStyle={{borderWidth:1}}
+    imageHeight={300}
+    markerSize={0.15} //size based on the view height
+    onMarkerAdded={(rx, ry) => {
+        console.log(rx), console.log(ry);
+    }}
+    imageSource={require('./floorplan.jpg')} //or uri
+    markerSource={require('./marker.png')} //or uri
+/>     
 
-const result = await multiply(3, 7);
+```
+
+## Props
+
+```javascript
+  containerStyle: ViewStyle;
+  markerX?: number;
+  markerY?: number;
+  markerSize: number;
+  markerSource: ImageSourcePropType;
+  parentScrollRef?: RefObject<ScrollView>;
+  imageSource: ImageSourcePropType;
+  editable: boolean;
+  imageHeight: number;
+  onMarkerAdded: (x: number, y: number) => void;
 ```
 
 ## Contributing
