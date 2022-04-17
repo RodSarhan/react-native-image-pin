@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-pin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React native image pin allows for adding a pin or a marker to any image and to zoom and move around the image as needed, this is helpfun for marking specific coordinates in layouts or blueprints or any kind of image ",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
